@@ -823,7 +823,8 @@ dosetopt(int optno, int value, int force, char *new_opts)
 	new_opts[(optno == EMACSMODE) ? VIMODE : EMACSMODE] = 0;
     } else if (optno == SUNKEYBOARDHACK) {
 	/* for backward compatibility */
-	keyboardhackchar = (value ? '`' : '\0');
+	if (value)
+	    keyboardhackchar = '`';
     }
     new_opts[optno] = value;
     if (optno == BANGHIST || optno == SHINSTDIN)
