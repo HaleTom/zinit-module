@@ -237,8 +237,6 @@ static const struct gsu_scalar ifs_gsu =
 { ifsgetfn, ifssetfn, stdunsetfn };
 static const struct gsu_scalar underscore_gsu =
 { underscoregetfn, nullstrsetfn, stdunsetfn };
-static const struct gsu_scalar keyboard_hack_gsu =
-{ keyboardhackgetfn, keyboardhacksetfn, stdunsetfn };
 #ifdef USE_LOCALE
 static const struct gsu_scalar lc_blah_gsu =
 { strgetfn, lcsetfn, stdunsetfn };
@@ -313,7 +311,6 @@ IPDEF2("TERMINFO_DIRS", terminfodirs_gsu, PM_UNSET),
 IPDEF2("WORDCHARS", wordchars_gsu, 0),
 IPDEF2("IFS", ifs_gsu, PM_DONTIMPORT | PM_RESTRICTED),
 IPDEF2("_", underscore_gsu, PM_DONTIMPORT),
-IPDEF2("KEYBOARD_HACK", keyboard_hack_gsu, PM_DONTIMPORT),
 IPDEF2("0", argzero_gsu, 0),
 
 #ifdef USE_LOCALE
